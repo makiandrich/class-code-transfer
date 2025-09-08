@@ -1,0 +1,141 @@
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Random;
+/*
+public class hw2 {
+    //method that prints out hello world
+    public static void main(String[] args){
+        //get the random guess
+        InputStreamReader inputStreamReader = new InputStreamReader(System.in);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+        //Gets a random num 0-10
+        Random rand = new Random();
+        int numberToGuess = rand.nextInt(10) + 1;
+
+        //vars
+        int guess;
+
+        System.out.print("Guess the number between 1 and 10: ");
+        try {
+            guess = Integer.parseInt(bufferedReader.readLine());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        if (guess == numberToGuess) {
+            System.out.println("Congratulations! You guessed it!");
+        }else{
+            System.out.println("Wrong guess! Try again!");
+            System.out.print("The Correct answer is: " + numberToGuess);
+        }
+
+
+        //System.out.println("Customer Name: " + name);
+        //System.out.printf("Bill: %.2f\n",bill);
+
+
+    }
+}
+
+public class hw2 {
+    public static void main(String[] args) {
+        InputStreamReader inputStreamReader = new InputStreamReader(System.in);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+        int grade = 0;
+        System.out.print("Whats your grade?: ");
+        try {
+            grade = Integer.parseInt(bufferedReader.readLine());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        if (grade <= 60) {
+            System.out.println("Your letter grade is an F");
+        } else if (grade > 60 && grade <= 69) {
+            System.out.println("Your letter grade is an D");
+        } else if (grade >= 70 && grade <= 79) {
+            System.out.println("Your letter grade is an C");
+        } else if (grade >= 80 && grade <= 89) {
+            System.out.println("Your letter grade is an B");
+        } else {
+            System.out.println("Your letter grade is an A");
+        }
+        System.out.println("Your numeric grade is " + grade);
+    }
+}
+
+public class hw2{
+    public static void main(String[] args){
+       InputStreamReader isr = new InputStreamReader(System.in);
+       BufferedReader br = new BufferedReader(isr);
+
+       int limit = 0;
+       int speed = 0;
+       int fine = 0;
+       int diff = 0;
+       System.out.print("Whats the speed limit: ");
+        try {
+            limit = Integer.parseInt(br.readLine());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.print("How fast were you going: ");
+        try {
+            speed = Integer.parseInt(br.readLine());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        int overlimit = speed - limit;
+
+        if(speed < limit+9){
+            System.out.println("No fine!");
+            System.exit(0);
+        }else{
+            //for the first 10 over
+            fine += 50;
+            //calc the rest over
+            diff = speed-(limit+10);
+            fine += diff*10;
+
+        }
+        System.out.println("You were going " + overlimit + " over the limit");
+        System.out.println("Your fine is: "+ fine);
+    }
+}
+
+ */
+
+public class hw2{
+    public static void main(String[] arg){
+        InputStreamReader isr = new InputStreamReader(System.in);
+        BufferedReader br = new BufferedReader(isr);
+
+        //vars
+        int usersec = 0;
+        int hours = 0;
+        int minutes = 0;
+
+        System.out.print("Enter number of seconds: ");
+        try {
+            usersec = Integer.parseInt(br.readLine());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        //calc how many hours
+        hours = usersec / 3600;
+        usersec = usersec - hours * 3600;
+
+        //calc minutes
+        minutes = usersec / 60;
+        usersec = usersec - minutes * 60;
+
+        //seconds is what is left
+        System.out.println("Hours " + hours + " Minutes "+  minutes + " Seconds " + usersec);
+    }
+
+}
