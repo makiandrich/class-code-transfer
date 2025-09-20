@@ -1,0 +1,98 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class User {
+
+
+    String firstName;
+    String lastName;
+    String email;
+    private String emailPassword;
+    private int userID = 15;
+
+
+    public void setEmailPassword(String emailPassword) {
+        this.emailPassword = emailPassword;
+    }
+
+    public int getUserID() {
+        return userID;
+    }
+
+    public void inputData(){
+        InputStreamReader isr = new InputStreamReader(System.in);
+        BufferedReader br = new BufferedReader(isr);
+
+        //First Name input
+        System.out.println("Enter your first name");
+        try {
+            firstName = br.readLine();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        //last Name input
+        System.out.println("Enter your last name");
+        try {
+            lastName = br.readLine();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        //Email input
+        System.out.println("Enter your email");
+        try {
+            email = br.readLine();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        //email password input
+        System.out.println("Enter your email password");
+        try {
+            emailPassword = br.readLine();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    public void printData(){
+        System.out.println("First Name: " + firstName);
+        System.out.println("Last Name: " + lastName);
+        System.out.println("Email: " + email);
+        System.out.println("Email Password: " + emailPassword);
+
+
+    }
+
+    public void login(){
+        String testEmail;
+        String testPassword;
+
+        InputStreamReader isr = new InputStreamReader(System.in);
+        BufferedReader br = new BufferedReader(isr);
+
+        //Email input
+        System.out.print("Enter your email: ");
+        try {
+            testEmail = br.readLine();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        //email password input
+        System.out.print("Enter your email password: ");
+        try {
+            testPassword = br.readLine();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        //If statementst to see if the login info matches
+        if (testEmail.equals(email) && testPassword.equals(emailPassword)) {
+            System.out.println("Login Successful");
+        }else{
+            System.out.println("Login Failed, Enter proper credentials");
+        }
+
+
+    }
+}
