@@ -1,0 +1,15 @@
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class testing {
+
+    @Test
+    public void testSingleFamilyTier1(){
+        User user1 = new User();
+        user1.getUserID();
+        assertEquals(15, user1.getUserID(), 0.01);
+    }
+
+
+}
